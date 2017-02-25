@@ -15,7 +15,7 @@ $ node montyHall.js [iterations]
 ```
 Default number of iterations is 1000.
 
-#### Example restult
+#### Example result
 
 ```
 $ node montyHall.js
