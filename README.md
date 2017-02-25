@@ -8,7 +8,7 @@ The Monty Hall problem is a brain teaser, in the form of a probability puzzle, l
 https://en.wikipedia.org/wiki/Monty_Hall_problem
 
 ## Usage
-This is a simple CLI program, written in node.js, that calculates the likelihood of winning a car by always choose to switch door.
+This is a simple CLI program, written in node.js, that calculates the likelihood of winning a car by always choosing to switch doors.
 
 ```sh
 $ node montyHall.js [iterations]
