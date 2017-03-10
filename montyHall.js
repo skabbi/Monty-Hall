@@ -20,7 +20,7 @@ const montyHall = function () {
 
     // => MAP:    If the door can be opened; replaces value, i.e. "car"/"goat", for the door number, i.e. 0-2
     // => FILTER: Removes all values, leaving only room numbers
-    // => REDUCE: Returns the first valid door number availible
+    // => REDUCE: Returns the first door number available
     const doorToOpen = doors.map(findRoomNumberOfValidDoors, firstDoor).filter(removeInvalidDoors).reduce(selectFirstValidDoor);
     return doorToOpen;
   };
