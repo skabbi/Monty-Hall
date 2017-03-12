@@ -46,9 +46,9 @@ const runMontyHallSimulation = function (iterations) {
     results[montyHall()]++
   };
 
-  console.log('Iterations      :', iterations)
-  console.log('Percent of car  :', ((results.car / iterations) * 100).toFixed(2), '%')
-  console.log('Percent of goat :', ((results.goat / iterations) * 100).toFixed(2), '%')
+  console.log(`Iterations      : ${iterations}`)
+  console.log(`Percent of car  : ${((results.car / iterations) * 100).toFixed(2)} %`)
+  console.log(`Percent of goat : ${((results.goat / iterations) * 100).toFixed(2)} %`)
 }
 
 const iterations = process.argv[2] || 1000;
