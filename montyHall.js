@@ -9,20 +9,12 @@ const montyHall = function () {
     return doors;
   };
 
-  const findNoPrizeDoorToOpen = function (doors, firstDoor) {
-
-    const findRoomNumberOfValidDoors = function(value, key) {
-      const alreadySelectedDoor = this;
-      return (key === alreadySelectedDoor || value === "car") ? value : key;
+  // Checks if a door is an unpicked 'goat' door. Searches each door until it does, by default starts with door number 0.
+  const findNoPrizeDoorToOpen = function (doors, firstDoor, checkDoorNumber = 0) {
+    if (checkDoorNumber === firstDoor || doors[checkDoorNumber] === 'car') {
+      return findNoPrizeDoorToOpen(doors, firstDoor, ++checkDoorNumber) // Is not an unpicked 'goat' door. Checking next door.
     }
-    const removeInvalidDoors = (value) => Number.isInteger(value);
-    const selectFirstValidDoor = (val) => val;
-
-    // => MAP:    If the door can be opened; replaces value, i.e. "car"/"goat", for the door number, i.e. 0-2
-    // => FILTER: Removes all values, leaving only room numbers
-    // => REDUCE: Returns the first door number available
-    const doorToOpen = doors.map(findRoomNumberOfValidDoors, firstDoor).filter(removeInvalidDoors).reduce(selectFirstValidDoor);
-    return doorToOpen;
+    return checkDoorNumber;
   };
 
   const findLastDoor = function (firstDoor, secondDoor) {
@@ -31,8 +23,12 @@ const montyHall = function () {
     return unopenedDoor;
   };
 
+
+  // Preparing doors
   const doorWithPrize = selectRandomDoor();                                 // Randomly select a door containing the prize
   const doors = generateDoors(doorWithPrize);                               // Generate 3 doors. Behind one door is a car; behind the others, goats
+  
+  // Game show starts
   const chooseFirstDoor = selectRandomDoor();                               // Contestant randomly picks a door
   const openSecondDoor = findNoPrizeDoorToOpen(doors, chooseFirstDoor);     // Host opens a door with a goat
   const switchToThirdDoor = findLastDoor(chooseFirstDoor, openSecondDoor);  // Contestant switches door
