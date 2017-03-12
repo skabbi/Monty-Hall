@@ -1,6 +1,6 @@
 {
   "name": "montyhall",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a simple CLI program, written in node.js, that calculates the likelihood of winning a car by always choose to switch door.",
   "main": "montyHall.js",
   "scripts": {
