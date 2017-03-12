@@ -20,6 +20,7 @@ Default number of iterations is 1000.
 ```
 $ node montyHall.js
 Iterations      : 1000
-Percent of car  : 66.30 %
-Percent of goat : 33.70 %
+Percent of car  : 67.00 %
+Percent of goat : 33.00 %
+Execution time  : 6.854ms
 ```
