@@ -43,13 +43,15 @@ const runMontyHallSimulation = function (iterations) {
   };
 
   for (let i = 0; i < iterations; i++) {
-    results[montyHall()]++
+    results[montyHall()]++;
   };
 
-  console.log(`Iterations      : ${iterations}`)
-  console.log(`Percent of car  : ${((results.car / iterations) * 100).toFixed(2)} %`)
-  console.log(`Percent of goat : ${((results.goat / iterations) * 100).toFixed(2)} %`)
+  console.log(`Iterations      : ${iterations}`);
+  console.log(`Percent of car  : ${((results.car / iterations) * 100).toFixed(2)} %`);
+  console.log(`Percent of goat : ${((results.goat / iterations) * 100).toFixed(2)} %`);
 }
 
 const iterations = process.argv[2] || 1000;
+console.time(`Execution time  `);
 runMontyHallSimulation(iterations);
+console.timeEnd(`Execution time  `);
